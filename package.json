@@ -1,0 +1,58 @@
+{
+  "name": "@easypics/sdk",
+  "version": "0.0.1",
+  "description": "Official TypeScript SDK for the EasyPics Developer API.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Septy Studios",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Septy-Studios/easypics-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Septy-Studios/easypics-sdk/issues"
+  },
+  "homepage": "https://easypics.lol/developers",
+  "keywords": [
+    "easypics",
+    "sdk",
+    "api",
+    "media",
+    "image-hosting",
+    "typescript"
+  ],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "SECURITY.md",
+    "RELEASES.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "engines": {
+    "node": ">=22"
+  },
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "prepublishOnly": "npm test",
+    "prepack": "npm test"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.8.0"
+  }
+}
